@@ -8,7 +8,13 @@ console.log('--- loading logic --> ');
  * @param {number} [repetitions=1] - how many time to repeat the string
  * @returns {string} the repeated string
  */
-const repeatString = () => {};
+const repeatString = (text = '', repetitions = 1) => {
+  let repeatString = '';
+  for (let i = 0; i< repetitions; i++) {
+    repeatString += text;
+  }
+  return repeatString;
+};
 
 {
   const consoleLog = console.log;
