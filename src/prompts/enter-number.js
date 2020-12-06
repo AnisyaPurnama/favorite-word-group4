@@ -11,7 +11,7 @@ console.log('--- loading prompt --> ');
 const enterNumber = (message = 'enter a number') => {
   let inputNumber = 0;
   while (true) {
-    let UserInput = prompt('Enter a number')
+    let userInput = prompt('Enter a number')
     if (userInput === null || userInput === '') {
       alert ( 'Please enter something')
       continue;
