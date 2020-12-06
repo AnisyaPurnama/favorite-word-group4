@@ -8,33 +8,25 @@ console.log("--- loading interaction -->");
  */
 
 // ---- ---- Reverse ---- ----
-const reverseWord = (text = "") => {
+const reverseWord = () => {
   // 1. if there is no saved word, call displayWord and exit early
   // 2. use reverseString to reverse the favorite word
   // 3. render a final before/after message with favoriteWord and the new string from ^ up there
   // 4. alert the rendered message
 
 
-  //1. Chech if there is no saved word. Here we want to call the displayWord function and exit early. (want some extra work)
-  if (text === '') {
+  //1. Chech if there is no saved word. Here we want to call the displayWord function and exit early.
+  if (favoriteWord === '') {
     displayWord();
+    return;
   }
 
   //2. Use reverseString to reverse the favorite word
-  let reverseString = "";
-
-  for (let index = text.length - 1; index > -1; index--) {
-    const nextCharacter = text[index];
-    reverseString = reverseString + nextCharacter;
-  }
-  return reverseString;
-};
-
-  // ---- ---- Input ---- ----
-  const favoriteWord = setWord();
-  const reverseInput = reverseWord(favoriteWord)
+  const reverseFavoriteWord = reverseString(favoriteWord);
 
   //3. Render a final before/after message with favoriteWord and the new string from ^ up there
-  const finalMessage = 'before:\n' + '- "' + favoriteWord + '"\n\n' + 'after:\n' + '- "' + reverseInput + '"\n\n';
+  const finalMessage = beforeAndAfter(favoriteWord, reverseFavoriteWord, 'Reverse favorite word ');
+  
   // 4. alert the rendered message
   alert(finalMessage);
+};
