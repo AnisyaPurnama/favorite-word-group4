@@ -8,7 +8,7 @@ console.log('--- loading interaction -->');
  */
 const clearWord = () => {
     if (favoriteWord === '') {
-        alert('please enter the word! ');
+        alert('please enter the favorite word! ');
     }
     
     const confirmMessage = 'your favorite word is "' + favoriteWord + '" so you want to clear it ?';

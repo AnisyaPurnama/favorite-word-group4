@@ -19,7 +19,7 @@ const repeatWordOrCharacters = () => {
   let choice = chooseFromOptions(['word', 'characters']);
 
   // 3. use enterNumber to ask the user how many times to repeat
-  let repeat = enterNumber('enter a repetation  number');
+  let repeat = enterNumber('enter a repetition  number');
 
   // 4. use repeatString or repeatCharacters to create a new string, depending on user the user's choice
   if (choice === 'word') {
