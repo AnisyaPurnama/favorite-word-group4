@@ -7,8 +7,15 @@ console.log('--- loading logic --> ');
  * @param {string} [str=''] - the string to reverse
  * @returns {string} the reversed string
  */
-const reverseString = () => {};
-
+const reverseString = (text = '') => {
+  let reversedString = '';
+  for (let index = text.length - 1; index > -1; index--){
+    const nextCharacter = text[index];
+    reversedString = reversedString + nextCharacter;
+    }
+  return reversedString;
+  };
+  
 {
   const consoleLog = console.log;
   console.log = () => {};

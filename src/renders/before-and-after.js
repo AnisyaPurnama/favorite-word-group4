@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-console.log('--- loading render --> ');
+console.log("--- loading render --> ");
 
 /**
  * renders two strings into a before/after comparison
@@ -9,7 +9,19 @@ console.log('--- loading render --> ');
  * @param {string} [description=''] - describing what changes were made
  * @returns {string} a formatted before/after message
  */
-const beforeAndAfter = () => {};
+const beforeAndAfter = (beforeValue = '', afterValue = '', description = "") => {
+  if (description !== "") {
+    return (
+      description +
+      '\nbefore: "' +
+      beforeValue +
+      '"\nafter: "' +
+      afterValue +
+      '"'
+    );
+  }
+  return 'before: "' + beforeValue + '"\nafter: "' + afterValue + '"';
+};
 
 {
   const consoleLog = console.log;

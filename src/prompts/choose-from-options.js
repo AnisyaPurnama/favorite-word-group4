@@ -9,13 +9,43 @@ console.log('--- loading prompt --> ');
  * @param {string} [instructions='pick one'] - to explain the options to the user
  * @returns {string} the selected option
  */
-const chooseFromOptions = () => {
+const chooseFromOptions = (options = ['yes', 'no'], instructions = 'pick one') => {
+
   // 1. render the options message for the user
+  const optionMessage = 'Which option you want to select \n "' + options + '"';
+  console.log(optionMessage);
+
   // 2. begin an I/O loop
-  //  a. prompt the user with the message
-  //  b. continue if the user input is empty
-  //  c. continue if the user input is not in the options array
-  //  d. ask the user to confirm their choice
+  while (true) {
+    //  a. prompt the user with the message
+    const promptMessage = 'Enter your option from the options array \n "' + options + '"';
+    let userInput = prompt(promptMessage);
+
+    //  b. continue if the user input is empty
+    if (userInput === '') {
+      alert('You did not enter any option, \n\nplesae, which option you want to select');
+      continue;
+    }
+
+    //  c. continue if the user input is not in the options array
+    if (!options.includes(userInput)) {
+            alert('Your choice is not in the given options, \n\nplease, which option you want to select');
+            continue;
+    }
+
+    //  d. ask the user to confirm their choice
+    const confirmMessage = 'Your option is "' + userInput + '", is it correct?';
+    let userConfirm = confirm(confirmMessage);
+    if (userConfirm) {
+     let userOption = userInput;
+      break;
+    }
+    else {
+      alert('What is your option?');
+      continue;
+    }
+  }
+  return userOption;
 };
 
 {
@@ -25,9 +55,9 @@ const chooseFromOptions = () => {
   const globalConfirm = confirm;
   const globalAlert = alert;
   // over-write non-interactive I/O with empty functions
-  alert = () => {};
-  console.log = () => {};
-  // a function that simulates a user inputting a series of values
+  alert = () => { };
+  console.log = () => { };
+  //a  function that simulates a user inputting a series of values
   const mockUser = (values, index = 0) => () => values[index++];
 
   try {
