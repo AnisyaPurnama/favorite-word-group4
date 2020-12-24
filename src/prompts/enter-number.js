@@ -8,7 +8,37 @@ console.log('--- loading prompt --> ');
  * @param {string} [message='enter a number'] - the text displayed to the user
  * @returns {number} a number cast from the user input (never NaN)
  */
-const enterNumber = () => {};
+const enterNumber = (message = 'enter a number') => {
+  let inputNumber = 0;
+  while (true) {
+    let userInput = prompt('Enter a number')
+    if (userInput === null || userInput === '') {
+      alert ( 'Please enter something')
+      continue;
+    }
+
+    inputNumber = Number(userInput);
+    if (Number.isNan (userNumber)) {
+      alert ('that is not a number!');
+      continue;
+    }
+
+    confirmMessage = 'you entered "'+ inputNumber +'" is that correct ?';
+    userConfirm = confirm(confirmMessage);
+
+    if (userConfirm) {
+      finalMessage = 'your number is "' + userNumber + '"';
+      alert(finalMessage);
+      break;
+
+    } else {
+      alert('what is the number?');
+      continue;
+    }
+
+  }
+  return userNumber;
+};
 
 {
   // store I/O functions and console.log for later
